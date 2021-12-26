@@ -13,7 +13,7 @@ export default [
       sourcemap: true,
       format: "iife",
       name: "app",
-      file: "public/bundle.js"
+      file: "www/bundle.js"
     },
     plugins: [
       svelte({
@@ -27,8 +27,8 @@ export default [
       }),
       commonjs(),
       html({
-        template: "src/template.html",
-        dest: "public",
+        template: (!!production) ? "templates/index.html" : "template/index-dev.html",
+        dest: "www",
         filename: "index.html",
         inject: "body"
       })
@@ -38,7 +38,7 @@ export default [
     input: "src/App.svelte",
     output: {
       format: "cjs",
-      file: "public/.temp/ssr.js"
+      file: "src/.temp/ssr.js"
     },
     plugins: [
       svelte({

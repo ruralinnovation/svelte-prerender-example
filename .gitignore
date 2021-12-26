@@ -1,4 +1,12 @@
-.DS_Store
+.*
+*.R*
+dist
+build
+lib
+logs
 node_modules
-public
-!public/favicon.png
+out
+rsconnect
+target
+www
+packrat/lib*/

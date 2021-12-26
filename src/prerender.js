@@ -3,12 +3,15 @@ const path = require("path");
 const rimraf = require("rimraf");
 const minify = require("html-minifier").minify;
 
-const App = require(path.resolve(process.cwd(), "public/.temp/ssr.js"));
+const App = require(path.resolve(process.cwd(), "src/.temp/ssr.js"));
 
-const { html, css } = App.render({ name: "world" });
+const { html, css } = App.render({
+  authenticated: true, // set to true to ignore auth state
+  name: 'world'
+});
 
 const template = fs.readFileSync(
-  path.resolve(process.cwd(), "public/index.html"),
+  path.resolve(process.cwd(), "www/index.html"),
   "utf-8"
 );
 
@@ -21,5 +24,5 @@ const result = template.replace(
   `<style>${css.code}</style>${minifiedHtml}`
 );
 
-fs.writeFileSync(path.resolve(process.cwd(), "public/index.html"), result);
-rimraf.sync(path.resolve(process.cwd(), "public/.temp"));
+fs.writeFileSync(path.resolve(process.cwd(), "www/index.html"), result);
+rimraf.sync(path.resolve(process.cwd(), "src/.temp"));
