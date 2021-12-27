@@ -1,7 +1,7 @@
 #!Rscript
 
 if (as.numeric(version$major) == 3 && as.numeric(version$minor) >= 5) {
-  options(repos = list(MRAN = "https://mran.microsoft.com/snapshot/2018-08-01", CRAN = "http://cran.rstudio.com/"))
+  options(repos = list(MRAN = "https://mran.microsoft.com/snapshot/2020-04-24", CRAN = "http://cran.rstudio.com/"))
 }
 
 args <- commandArgs(trailingOnly = TRUE)

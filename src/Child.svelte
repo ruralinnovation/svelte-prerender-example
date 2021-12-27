@@ -1,3 +1,7 @@
+<script>
+    export let id = "plot";
+</script>
+
 <style>
   h2 {
     color: red;
@@ -18,17 +22,16 @@
 </p>
 
 <p>
-
     <label>Number of observations:</label><br />
     <input type="number" name="n" value="500" min="1" max="1000" />
-
 </p>
 
 <h3>Summary of data:</h3>
 <pre id="summary" class="shiny-text-output"></pre>
 
 <h3>Plot of data:</h3>
-<div id="plot" class="shiny-plot-output"
+
+<div id="{id}" class="shiny-plot-output"
      style="width: 100%; height: 300px"></div>
 
 <h3>Head of data:</h3>

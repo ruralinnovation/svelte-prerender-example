@@ -1,7 +1,5 @@
 # Prerender Svelte app at build-time
 
-> :warning: I'd recommend you to use [rollup-plugin-svelte-ssr](https://github.com/akaSybe/rollup-plugin-svelte-ssr) instead. It uses the same approach but it's easier to use.
-
 This is an example how to prerender Svelte app
 
 ## Get started
@@ -21,10 +19,10 @@ npm run build
 Run
 
 ```bash
-npm run serve
+npm run start
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running
+Navigate to [localhost:4321](http://localhost:4321). You should see your app running
 
 ## How it works
 
