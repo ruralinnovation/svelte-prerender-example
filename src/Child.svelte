@@ -4,7 +4,7 @@
 
 <style>
   h2 {
-    color: red;
+    color: orange;
     font-weight: bold;
   }
 </style>

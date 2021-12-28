@@ -3,6 +3,7 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import copy from 'rollup-plugin-copy';
+import del from "rollup-plugin-delete";
 import execute from "rollup-plugin-execute";
 import html from "rollup-plugin-bundle-html";
 
@@ -14,7 +15,7 @@ const production = !(process.argv.filter(arg => arg.match(/-w/) !== null).length
 }(production));
 
 export default [
-    // Normal Svelte client-side rendering via bundle.js ----
+  // Normal Svelte client-side rendering via bundle.js ----
   {
     external: ['Shiny'],
     input: "src/main.js",
@@ -65,14 +66,10 @@ export default [
       svelte({
         dev: !production,
         hydratable: true
-      }),
-
-      // In dev mode, call `npm run start` once
-      // the bundle has been generated
-      !production && serve()
+      })
     ]
   },
-  // Svelte server-side rendering, *no* dynamic content rendered by client/browser ----
+  // Hybrid Svelte server-side rendering ----
   {
     external: ['Shiny'],
     input: "src/App.svelte",
@@ -116,6 +113,11 @@ export default [
         dev: !production,
         generate: "ssr"
       }),
+
+      // // *NO* dynamic content rendered by client/browser if bundle.js is deleted
+      // del({
+      //   targets: "www/bundle*"
+      // }),
 
       execute("node src/prerender.js"),
 

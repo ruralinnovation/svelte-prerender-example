@@ -1,6 +1,6 @@
 # Prerender Svelte app at build-time
 
-This is an example how to prerender Svelte app
+This is a minimal example of how to prerender the UI defined by Svelte into an `html` file that will be served by your Shiny app.
 
 ## Get started
 
@@ -16,11 +16,13 @@ Build
 npm run build
 ```
 
-Run
+Run via npm ...
 
 ```bash
 npm run start
 ```
+
+... or open `app.R` in RStudio and use the tool button to start the Shiny app server.
 
 Navigate to [localhost:4321](http://localhost:4321). You should see your app running
 

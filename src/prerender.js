@@ -37,7 +37,5 @@ if (!!html) {
     console.log(result);
 
     fs.writeFileSync(path.resolve(process.cwd(), "www/index.html"), result);
-    rimraf.sync(path.resolve(process.cwd(), "www/bundle.js"));
-    rimraf.sync(path.resolve(process.cwd(), "www/bundle.js.map"));
     rimraf.sync(path.resolve(process.cwd(), "www/ssr.js"));
 }

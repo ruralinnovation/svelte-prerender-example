@@ -11,20 +11,37 @@
   {{ headContent() }}
 </head>
 
-<body>
+<body style="margin:0;padding:0;">
   <div id="app">
     
-    <style>h1.svelte-lolxrz{color:purple}div.child.svelte-lolxrz{padding:20px;border:1px solid black}
-h2.svelte-o3w3k6{color:red;font-weight:bold}</style>
-    <h1 class="svelte-lolxrz">Hello world!</h1>
+    <style>h1.svelte-1ujzflh{color:purple}div.content-container.svelte-1ujzflh{padding:20px}div.child.svelte-1ujzflh{border:1px solid black}.bg-gray-400.svelte-1ujzflh{--bg-opacity:1 !important;background-color:#cbd5e0 !important;background-color:rgba(203,213,224,var(--bg-opacity)) !important}.bg-gray-500.svelte-1ujzflh{--bg-opacity:1 !important;background-color:#a0aec0 !important;background-color:rgba(160,174,192,var(--bg-opacity)) !important}.flex.svelte-1ujzflh{display:flex !important}.flex-wrap.svelte-1ujzflh{flex-wrap:wrap !important}.ml-auto.svelte-1ujzflh{margin-left:auto !important}.mr-auto.svelte-1ujzflh{margin-right:auto !important}.w-1\/2.svelte-1ujzflh{width:50% !important}
+h2.svelte-1nfql8t{color:orange;font-weight:bold}</style>
+    <div class="flex flex-wrap svelte-1ujzflh">
 
-	<input name="foo" type="range" min="100" max="200" step="10" value="100"><br>
-	value(100)... data/value only updates when *not* using server-side rendering (ssr)
+	    <div class="w-1/2 ml-auto bg-gray-400 svelte-1ujzflh">
+	        <div class="content-container svelte-1ujzflh">
+	            <h1 class="svelte-1ujzflh">Hello world!</h1>
 
-	<div id="plot1" class="shiny-plot-output" style="width: 100%; height: 300px"></div>
+	            
+	            <input name="foo" type="range" min="100" max="200" step="10"><br>
+	            value(0) ...data/value only updates when client-side rendering with bundle.js<br>
 
-	<div class="child svelte-lolxrz">
-	    <h2 class="svelte-o3w3k6">Child component content</h2>
+	            
+	            
+	            
+	            
+	            
+	            
+	            
+	            
+
+	            <div id="plot1" class="shiny-plot-output" style="width: 100%; height: 300px"></div>
+	        </div>
+	    </div>
+
+	    <div class="w-1/2 mr-auto bg-gray-500 svelte-1ujzflh">
+	        <div class="child content-container svelte-1ujzflh">
+	            <h2 class="svelte-1nfql8t">Child component content</h2>
 
 	<p>
 	    <label>Distribution type:</label><br>
@@ -50,10 +67,14 @@ h2.svelte-o3w3k6{color:red;font-weight:bold}</style>
 
 	<h3>Head of data:</h3>
 	<div id="table" class="shiny-html-output"></div>
+	        </div>
+	    </div>
+
 	</div>
 
   </div>
 
-  <!--<script src="https://live-production-bundle.js" type="text/javascript"></script>-->
+  <script src="bundle.js" type="text/javascript"></script>
 </body>
 </html>
+
